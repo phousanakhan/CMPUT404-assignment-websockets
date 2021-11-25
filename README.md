@@ -59,3 +59,9 @@ Contributors
 * Mark Galloway
 * Abram Hindle
 * Cole Mackenzie
+
+Credits
+========================
+https://github.com/abramhindle/WebSocketsExamples
+Purpose: Implement sockets.py using code from chat.py. Implement index.html using code from chat.html
+Credits: Abram Hindle
