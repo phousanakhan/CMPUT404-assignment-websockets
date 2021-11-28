@@ -110,6 +110,8 @@ def read_ws(ws, client):
             if (msg is not None):
                 packet = json.loads(msg)
                 send_all_json(packet)
+                for index, key in enumerate(packet):
+                    myWorld.set(key, packet[key])
             else:
                 break
     except:
@@ -126,6 +128,8 @@ def subscribe_socket(ws):
     clients.append(client)
     g = gevent.spawn(read_ws, ws, client)
     try:
+        #need to send the current world
+        ws.send(json.dumps(myWorld.world()))
         while True:
             # block here
             msg = client.get()
